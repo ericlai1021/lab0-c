@@ -16,12 +16,9 @@ struct list_head *q_new()
 {
     struct list_head *head = malloc(sizeof(*head));
 
-    if (!head) {
-        free(head);
-        return NULL;
-    }
+    if (head)
+        INIT_LIST_HEAD(head);
 
-    INIT_LIST_HEAD(head);
     return head;
 }
 
@@ -249,5 +246,6 @@ int q_descend(struct list_head *head)
 int q_merge(struct list_head *head)
 {
     // https://leetcode.com/problems/merge-k-sorted-lists/
+
     return 0;
 }
